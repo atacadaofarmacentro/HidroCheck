@@ -25,7 +25,7 @@
 <p>Descubra quanta água você deve beber por dia</p>
 </div>
 
-<!-- CONTEÚDO COM IMAGENS -->
+<!-- CONTEÚDO -->
 <div class="flex justify-center items-center gap-6 mt-6 px-4 flex-wrap">
 
 <!-- IMAGEM ESQUERDA -->
@@ -46,8 +46,30 @@ class="w-full bg-blue-500 text-white py-4 rounded-2xl font-bold text-lg">
 <div id="resultado" class="hidden mt-6 text-center">
 
 <div id="litros" class="text-5xl font-bold text-blue-600"></div>
+
 <div class="mt-3 text-lg text-gray-700">
 Seu corpo precisa disso por dia 💙
+</div>
+
+<!-- BENEFÍCIOS -->
+<div class="mt-6 text-left text-gray-700">
+<h3 class="font-bold text-blue-600 mb-2">💪 Se beber água corretamente:</h3>
+<ul class="list-disc ml-5">
+<li>Pele mais bonita e hidratada</li>
+<li>Mais energia no dia a dia</li>
+<li>Ajuda no emagrecimento</li>
+<li>Melhora o funcionamento do intestino</li>
+<li>Protege os rins</li>
+</ul>
+
+<h3 class="font-bold text-red-600 mt-4 mb-2">⚠️ Se não beber água suficiente:</h3>
+<ul class="list-disc ml-5">
+<li>Pele seca e envelhecimento precoce</li>
+<li>Cansaço e fraqueza</li>
+<li>Dor de cabeça frequente</li>
+<li>Problemas renais</li>
+<li>Intestino preso</li>
+</ul>
 </div>
 
 </div>
@@ -61,6 +83,8 @@ class="img-lateral hidden md:block">
 </div>
 
 <script>
+
+// CALCULAR ÁGUA
 function calcularAgua(){
 let peso = document.getElementById("peso").value;
 
@@ -75,6 +99,14 @@ let litros = (ml / 1000).toFixed(2);
 document.getElementById("resultado").classList.remove("hidden");
 document.getElementById("litros").innerHTML = litros + " L/dia";
 }
+
+// ENTER FUNCIONANDO
+document.getElementById("peso").addEventListener("keypress", function(e){
+if(e.key === "Enter"){
+calcularAgua();
+}
+});
+
 </script>
 
 </body>
